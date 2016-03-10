@@ -119,14 +119,14 @@ body{
 	}
 
 .podcasts_banner{
-	background-image: url(../images/top.jpg);
+	background-image: image-url("top.jpg");
 	h1{
 		color: $dark;
 	}
 }
 
 .sign_in_banner{
-	background-image: url(../images/up.jpg);
+	background-image: image-url("up.jpg");
 	h1{
 		color: $white;
 		text-shadow: 2px 2px 5px $dark;
@@ -134,7 +134,7 @@ body{
 }
 
 .sign_up_banner{
-	background-image: url(../images/love11.jpg);
+	background-image: image-url("love11.jpg");
 	h1{
 		color: $white;
 		text-shadow: 2px 2px 5px $dark;
@@ -210,11 +210,4 @@ form{
 
 @import 'normalize';
 @import 'welcome';
-
-
-
-/*
-
-
 @import 'podcasts';
-	*/
