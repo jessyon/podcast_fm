@@ -24,14 +24,29 @@
 		
 			All Podcsts
 			<span>/</span>
-			The Rocketship Podcast
+			<%= link_to @podcast.title, podcast_path(@podcast)%>
+			<span>/</span>
+			<%= @episode.title %>
 			
 		<%end%>
 	</div>
 
+
+
+   <div id="episode_content">
+    	<div class="wrapper_skinny">
+    		<img src="images/nick6.jpg" alt="nick" class="current_episode_thumbnail">	
+    		<h2><%= @episode.title %></h2>
+    		<p class="description"><%= @episode.description %></p>
+    	</div>
+    </div>
+
+
+
 	<div id="episodes">
 		<div class="wrapper_skinny">
 			<ul class="cf">
+
 				<% @episodes.each do |episode|%>
 				<li class="cf">
 					<div class="episode_thumbnail">
@@ -45,10 +60,12 @@
 					</div>
 
 				</li>
+
 				<%end%>
 
 
-			   
+
+			    
 			</ul>
 		</div>
 	</div>
@@ -61,3 +78,6 @@
 			<a href="#">2</a>
 			<a href="#" class="next_page">Next</a>
 		</div>
+
+	</body>
+</html>
