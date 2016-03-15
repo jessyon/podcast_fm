@@ -1,5 +1,6 @@
 class EpisodesController < ApplicationController
-
+before_action :authenticate_podcast!, except: [:show]
+before_action :view_only_my_account, except: [:show]
 before_action :find_podcast
 before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
@@ -67,6 +68,15 @@ before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
 		def find_episode
 			@episode = Episode.find(params[:id])
+		end
+
+		def view_only_my_account
+			# episode's field podcast_id should match podcast id to view only my podcast id.
+			@podcast = Podcast.find(params[:podcast_id])
+			if current_podcast != @podcast
+				redirect_to root_path, notice: "Sorry, you are not allowed to view that page !"
+				# root_path of current_podcast id 
+			end
 		end
 
 	

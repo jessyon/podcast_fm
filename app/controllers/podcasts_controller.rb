@@ -16,7 +16,8 @@ class PodcastsController < ApplicationController
 		
 	end
 
-
+# There is no detroy and edit and update create method, so no need to authenticate
+# People only can use show and index and I don't what dashboard method is !it is like show method i guess
 
 	private
 
