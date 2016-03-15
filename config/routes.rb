@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   
-  devise_for :podcasts
-  root 'welcome#index'
-  resources :podcasts, only: [:index, :show] do 
+  	devise_for :podcasts
+  	
+  	resources :podcasts do 
   	resources :episodes
   end
 
-  
+    
+	authenticated :podcast do 
+		root 'podcasts#dashboard', as: 'authenticated_root'
+	end
+  	root 'welcome#index'
+
+
+
 end

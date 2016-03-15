@@ -8,17 +8,17 @@
     </div>
   </div>  
   
-<div id="links">
-
+ <div id="links">
   <ul>
     <div class="wrapper_skinny">
-    <li><a href="">Episodes</a></li>
-    <li><a href="#">New Episodes</a></li>
-    <li> <%= link_to "Accounting Settings", edit_podcast_registration_path, class: "current" %></li>
-    <li><a href="#">View Podcast</a></li>
+        <li><%= link_to "Manage Episodes", root_path   %></li>
+        <li><%= link_to "New Episodes", new_podcast_episode_path(@podcast)%></li>
+        <li><%= link_to "Accounting Settings", edit_podcast_registration_path, class: "current"   %></li>
+        <li><%= link_to "View Podcasta", podcasts_path %>  </li>
+   </div>  
   </ul>
-</div>
-</div>
+ </div>
+
 <div id="form">
   <div class="wrapper_skinny">
 
