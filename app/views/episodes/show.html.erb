@@ -21,7 +21,6 @@
 	</div>	
 	<div id="breadcrumb">
 		<%= link_to podcasts_path do%>
-		
 			All Podcsts
 			<span>/</span>
 			<%= link_to @podcast.title, podcast_path(@podcast)%>
@@ -35,7 +34,7 @@
 
    <div id="episode_content">
     	<div class="wrapper_skinny">
-    		<img src="images/nick6.jpg" alt="nick" class="current_episode_thumbnail">	
+    		<%= image_tag @episode.episode_thumbnail.url(:medium), class:"current_episode_thumbnail" %>
     		<h2><%= @episode.title %></h2>
     		<p class="description"><%= @episode.description %></p>
     	</div>
@@ -50,9 +49,7 @@
 				<% @episodes.each do |episode|%>
 				<li class="cf">
 					<div class="episode_thumbnail">
-						<a href="episode.html">
-							<img src="images/nick6.jpg" alt="nick">
-						</a>
+						<%= image_tag episode.episode_thumbnail.url(:medium), class:"current_episode_thumbnail" %>
 					</div>
 					<div class="episode_overview">
 						<h2><%= link_to episode.title, podcast_episode_path(@podcast, episode)%></h2>
