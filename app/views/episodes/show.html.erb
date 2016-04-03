@@ -39,6 +39,7 @@
     		<p class="description"><%= @episode.description %></p>
 
 
+			<!-- #Jp Player starts
 			<div id="jquery_jplayer_1" class="jp_jplayer"></div>
 			<div id="jp_container_1" class="jp-audio">
 				<div class="jp-type-single">
@@ -73,7 +74,7 @@
 
 					</div>
 				</div>	
-			</div>
+			</div> -->
 
 
 
@@ -109,28 +110,34 @@
 
 </div>
 
-<div class="pagination">
+<%= will_paginate @episodes, previous_label:"Previous", next_label: "Next" %>
+
+
+<!-- <div class="pagination">
 			<span class="previous_page disabled">Previous</span>
 			<em class="current">1</em>
 			<a href="#">2</a>
 			<a href="#" class="next_page">Next</a>
-		</div>
+		</div> -->
 
 
 
-<script>
-	$(document).ready(function(){
-		$("#jquery_jplayer_1").jPlayer({
-			ready: function () {
-				$(this).jPlayer("setMedia", {
-					mp3: "<%= @episode.mp3.url %>",
-				});
-			},
-			swfPath: "/js"
-			supplied: "mp3"
-		});
-	});
-</script>
+// <script>
+// 	$(document).ready(function(){
+// 		$("#jquery_jplayer_1").jPlayer({
+// 			ready: function () {
+// 				$(this).jPlayer("setMedia", {
+// 					mp3: "<%= @episode.mp3.url %>",
+// 				});
+// 			},
+// 			swfPath: "/js"
+// 			supplied: "mp3"
+// 		});
+// 	});
+// </script>
+
+
+
 
 
 
